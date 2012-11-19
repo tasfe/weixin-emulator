@@ -1,0 +1,26 @@
+A. Google Android SDK
+1. android sdk: http://developer.android.com/sdk/ -> other -> android-sdk_r20.0.3-windows.zip
+2. extract
+3. SDK Manager.exe -> download latest "SDK Platform"
+4. SET ANDROID_SDK_HOME=%CD% -> AVD Manager -> create AVD
+5. tools\emulator -avd <name>
+6. clean up files, skins etc.
+7. add custom skin
+7. adb install <path-to-your-APK>
+ 
+B. BlueStacks Android Emulator
+1. portable installation
+2. HD-ADB install <path-to-your-APK>
+3. remove unused apks
+
+
+Fake geo coordinate:
+a. adb shell am start -a android.intent.action.MAIN -n com.tencent.mm/.ui.LauncherUI
+b. adb emu geo fix 48.835797 9.246826
+geo fix 43.0 -122
+OR fake geo apk
+
+Fake shake (sensors):
+ adb shell "echo shakeme >/mnt/sdcard/shake.dat" 
+ adb shell "logcat"
+ 
